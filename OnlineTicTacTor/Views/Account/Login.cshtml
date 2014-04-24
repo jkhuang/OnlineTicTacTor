@@ -1,0 +1,38 @@
+﻿@model OnlineTicTacTor.Models.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+
+<section>
+    @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+    {
+        @Html.AntiForgeryToken();
+        @Html.ValidationSummary();
+        <div class="container">
+            <div class="content">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.UserName)
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "UserName" })
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password)
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
+                    @Html.ValidationMessageFor(m => m.Password)
+                </div>
+                <div class="checkbox">
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+            <p>
+                @Html.ActionLink("Register", "Register") if you don't have an account.
+            </p>
+        </div>
+    }
+</section>
+
+
