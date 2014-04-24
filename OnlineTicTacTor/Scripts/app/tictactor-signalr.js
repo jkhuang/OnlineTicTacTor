@@ -21,13 +21,6 @@ var GameViewModel = function () {
     
     // If the game started, Challenge is disabled.
     self.ChallengeDisabled = ko.observable(false);
-
-    ////self.showChallenge = function (item) {
-    ////    if (self.ChallengeDisabled() != true) {
-    ////        return "display:visible";
-    ////    }
-    ////    return "display:none";
-    ////};
 };
 
 $(function () {
